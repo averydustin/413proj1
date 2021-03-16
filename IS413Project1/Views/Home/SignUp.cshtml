@@ -3,11 +3,15 @@
 *@
 @{
     ViewBag.Title = "Sign Up Form";
+    ViewBag.Time = "Your appointment time is " + Model.ApptTime;
 }
 
 @model IS413Project1.Models.Appointment
 
+
 <h1>@ViewBag.Title</h1>
+<br />
+<p>@ViewBag.Time</p>
 <br />
 <form asp-action="Index" method="post" class="m-2">
     <div asp-validation-summary="All"></div>
