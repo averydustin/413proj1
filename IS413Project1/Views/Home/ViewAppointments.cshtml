@@ -4,7 +4,7 @@
 @{
 }
 
-@model IS413Project1.Models.Appointment
+@model IEnumerable<IS413Project1.Models.Appointment>
 
 <table class="table table-bordered table-striped">
     <thead>
@@ -18,7 +18,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var x in Model.Appointment)
+        @foreach (var x in Model)
         {
             <tr>
                 <td class="text-left">@x.ApptTime</td>

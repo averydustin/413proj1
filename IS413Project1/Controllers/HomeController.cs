@@ -63,7 +63,7 @@ namespace IS413Project1.Controllers
 
         //Page for viewing all appointments
         [HttpGet]
-        public IActionResult ViewApt()
+        public IActionResult ViewApppointments()
         {
             return View();
         }
