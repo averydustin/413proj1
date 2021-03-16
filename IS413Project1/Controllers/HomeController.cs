@@ -23,7 +23,7 @@ namespace IS413Project1.Controllers
             return View();
         }
 
-      
+
         //Sign Up View on GET (when page is originally loaded)
         [HttpGet]
         public IActionResult SignUp()
@@ -34,24 +34,31 @@ namespace IS413Project1.Controllers
         //Sign up View on POST (when time is submitted)
         //(still need to pass method to this from model. Something like "Add time")
         [HttpPost]
-        public IActionResult SignUp()
+        public IActionResult SignUp(int? time)
         {
-            return View("FormInput");
+            if (ModelState.IsValid)
+            {
+                return View("Index");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         //View for inputting individual information GET (when page is loaded)
-        [HttpGet]
-        public IActionResult FormInput()
-        {
-            return View();
-        }
+        // [HttpGet]
+        // public IActionResult FormInput()
+        // {
+        //     return View();
+        // }
 
-        //POST view for individual information (still need to pass parameters here based on model)
-        [HttpPost]
-        public IActionResult FormInput()
-        {
-            return View("Index");
-        }
+        // //POST view for individual information (still need to pass parameters here based on model)
+        // [HttpPost]
+        // public IActionResult FormInput()
+        // {
+        //     return View("Index");
+        // }
 
         //Page for viewing all appointments
         [HttpGet]
