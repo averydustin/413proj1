@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using IS413Project1.Models;
 
 namespace IS413Project1
 {
@@ -24,6 +26,13 @@ namespace IS413Project1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<AppointmentDBContext>(options =>
+            {
+                options.UseSqlite(Configuration["ConnectionStrings:AppointmentConnection"]);
+            });
+
+            services.AddScoped<IAppointmentRepository, EFAppointmentRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
