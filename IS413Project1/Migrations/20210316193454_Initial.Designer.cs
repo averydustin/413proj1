@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IS413Project1.Migrations
 {
     [DbContext(typeof(AppointmentDBContext))]
-    [Migration("20210316180901_Initial")]
+    [Migration("20210316193454_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,8 +24,7 @@ namespace IS413Project1.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("ApptTime")
-                        .IsConcurrencyToken()
-                        .ValueGeneratedOnAddOrUpdate()
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")

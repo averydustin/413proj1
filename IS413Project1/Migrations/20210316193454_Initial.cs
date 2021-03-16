@@ -12,7 +12,7 @@ namespace IS413Project1.Migrations
                 {
                     ApptKey = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    ApptTime = table.Column<string>(nullable: true),
+                    ApptTime = table.Column<string>(nullable: false),
                     GroupName = table.Column<string>(nullable: false),
                     GroupSize = table.Column<int>(nullable: false),
                     Email = table.Column<string>(nullable: false),

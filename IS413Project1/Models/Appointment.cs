@@ -8,7 +8,7 @@ namespace IS413Project1.Models
         [Key]
         public int ApptKey { get; set; }
 
-        [Timestamp]
+        [Required]
         public string ApptTime { get; set; }
 
         [Required]

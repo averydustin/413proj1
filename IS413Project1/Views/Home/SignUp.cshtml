@@ -5,30 +5,30 @@
     ViewBag.Title = "Sign Up Form";
 }
 
-@model IS413Project1.Models.SignUp
+@model IS413Project1.Models.Appointment
 
 <h1>@ViewBag.Title</h1>
 <br />
 <form asp-action="Index" method="post" class="m-2">
     <div asp-validation-summary="All"></div>
     <div class="form-group">
-        <label asp-for="NameOfGroup">Name of Group</label>
-        <input asp-for="NameOfGroup" class="form-control" />
+        <label asp-for="GroupName">Name of Group</label>
+        <input asp-for="GroupName" class="form-control" />
         <br />
     </div>
     <div class="form-group">
-        <label asp-for="SizeOfGroup">Size of Group</label>
-        <input asp-for="SizeOfGroup" class="form-control" />
+        <label asp-for="GroupSize">Size of Group</label>
+        <input asp-for="GroupSize" class="form-control" />
         <br />
     </div>
     <div class="form-group">
-        <label asp-for="EmailAddress">Email Address</label>
-        <input asp-for="EmailAddress" class="form-control" />
+        <label asp-for="Email">Email Address</label>
+        <input asp-for="Email" class="form-control" />
         <br />
     </div>
     <div class="form-group">
-        <label asp-for="PhoneNumber">Phone Number</label>
-        <input asp-for="PhoneNumber" class="form-control" />
+        <label asp-for="Phone">Phone Number</label>
+        <input asp-for="Phone" class="form-control" />
         <br />
     </div>
     <button type="submit" class="btn btn-sm btn-outline-success">Submit and sign up!</button>

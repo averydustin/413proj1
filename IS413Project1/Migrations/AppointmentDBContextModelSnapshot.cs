@@ -22,8 +22,7 @@ namespace IS413Project1.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("ApptTime")
-                        .IsConcurrencyToken()
-                        .ValueGeneratedOnAddOrUpdate()
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")

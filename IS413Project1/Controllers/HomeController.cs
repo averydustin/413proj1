@@ -47,18 +47,19 @@ namespace IS413Project1.Controllers
         }
 
         //View for inputting individual information GET (when page is loaded)
-        // [HttpGet]
-        // public IActionResult FormInput()
-        // {
-        //     return View();
-        // }
+         [HttpGet]
+         public IActionResult TimeInput()
+         {
+             return View();
+         }
 
-        // //POST view for individual information (still need to pass parameters here based on model)
-        // [HttpPost]
-        // public IActionResult FormInput()
-        // {
-        //     return View("Index");
-        // }
+        //POST view for individual information (still need to pass parameters here based on model)
+        [HttpPost]
+        public IActionResult TimeInput(Appointment appointment)
+        {
+            string time = appointment.ApptTime;
+            return View("SignUp", time);
+        }
 
         //Page for viewing all appointments
         [HttpGet]
