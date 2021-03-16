@@ -5,6 +5,9 @@ namespace IS413Project1.Models
 {
     public class Appointment
     {
+        [Key]
+        public int ApptKey { get; set; }
+
         [Timestamp]
         public string ApptTime { get; set; }
 
