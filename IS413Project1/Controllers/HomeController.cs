@@ -17,16 +17,49 @@ namespace IS413Project1.Controllers
         {
             _logger = logger;
         }
-
+        //Index View (Home page)
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+      
+        //Sign Up View on GET (when page is originally loaded)
+        [HttpGet]
+        public IActionResult SignUp()
         {
             return View();
         }
+
+        //Sign up View on POST (when time is submitted)
+        //(still need to pass method to this from model. Something like "Add time")
+        [HttpPost]
+        public IActionResult SignUp()
+        {
+            return View("FormInput");
+        }
+
+        //View for inputting individual information GET (when page is loaded)
+        [HttpGet]
+        public IActionResult FormInput()
+        {
+            return View();
+        }
+
+        //POST view for individual information (still need to pass parameters here based on model)
+        [HttpPost]
+        public IActionResult FormInput()
+        {
+            return View("Index");
+        }
+
+        //Page for viewing all appointments
+        [HttpGet]
+        public IActionResult ViewApt()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
