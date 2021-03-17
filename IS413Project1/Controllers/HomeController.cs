@@ -6,16 +6,22 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using IS413Project1.Models;
+using IS413Project1.Models.ViewModels;
 
 namespace IS413Project1.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        //private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private IAppointmentRepository _repository;
+
+        private AppointmentDBContext context { get; set; }
+
+        public HomeController(IAppointmentRepository repository, AppointmentDBContext cxt)
         {
-            _logger = logger;
+            _repository = repository;
+            context = cxt;
         }
         //Index View (Home page)
         public IActionResult Index()
@@ -26,18 +32,25 @@ namespace IS413Project1.Controllers
 
         //Sign Up View on GET (when page is originally loaded)
         [HttpGet]
-        public IActionResult SignUp()
+        public IActionResult SignUp(int TimeSlotID)
         {
+            TimeSlot timeslot = context.TimeSlots.Where(t => t.TimeSlotID == TimeSlotID).FirstOrDefault();
+            ViewBag.DayTime = timeslot.Day + " " + timeslot.Time;
+            ViewBag.TimeSlotID = timeslot.TimeSlotID;
             return View();
         }
 
         //Sign up View on POST (when time is submitted)
         //(still need to pass method to this from model. Something like "Add time")
         [HttpPost]
-        public IActionResult SignUp(int? time)
+        public IActionResult SignUp(Appointment appointment, int TimeSlotID)
         {
             if (ModelState.IsValid)
             {
+                TimeSlot timeslot = context.TimeSlots.Where(t => t.TimeSlotID == TimeSlotID).FirstOrDefault();
+                timeslot.ApptID = appointment.ApptID;
+                context.Appointments.Add(appointment);
+                context.SaveChanges();
                 string confirmation = "Your appointment was scheduled!";
                 ViewBag.Confirm = confirmation;
                 return View("Index", confirmation);
@@ -52,17 +65,27 @@ namespace IS413Project1.Controllers
         [HttpGet]
         public IActionResult TimeInput()
         {
-            return View();
+            //var query = context.Appointments.Select(p => p.ApptTime).ToArray();
+            //var TimeSlots = context.TimeSlots.Select(p => p.;
+            return View(new TimeSlotViewModel
+            {
+                TimeSlots = context.TimeSlots.Where(t => t.ApptID == null)
+            }
+                )  ;
         }
 
         //POST view for individual information (still need to pass parameters here based on model)
         [HttpPost]
-        public IActionResult TimeInput(Appointment appointment)
+        public IActionResult TimeInput(int TimeSlotID)
         {
-            string time = appointment.ApptTime;
+           
             if (ModelState.IsValid)
             {
-                return View("SignUp", time);
+                //IQueryable<TimeSlot> timeslot = context.TimeSlots.Where(p => p.Day == Day && p.Time == Time);
+
+                
+                return RedirectToAction("SignUp",new { TimeSlotID = TimeSlotID });
+                
             }
             else
             {
@@ -75,7 +98,10 @@ namespace IS413Project1.Controllers
         [HttpGet]
         public IActionResult ViewAppointments()
         {
-            return View();
+            return View(new TimeSlotViewModel
+            {
+                Appointments = context.Appointments
+            }) ;
         }
 
 

@@ -10,7 +10,7 @@ namespace IS413Project1.Migrations
                 name: "Appointments",
                 columns: table => new
                 {
-                    ApptKey = table.Column<int>(nullable: false)
+                    ApptID = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     ApptTime = table.Column<string>(nullable: false),
                     GroupName = table.Column<string>(nullable: false),
@@ -20,7 +20,23 @@ namespace IS413Project1.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Appointments", x => x.ApptKey);
+                    table.PrimaryKey("PK_Appointments", x => x.ApptID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TimeSlots",
+                columns: table => new
+                {
+                    TimeSlotID = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    ApptID = table.Column<int>(nullable: true),
+                    Day = table.Column<string>(nullable: true),
+                    Time = table.Column<string>(nullable: true),
+                    description = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TimeSlots", x => x.TimeSlotID);
                 });
         }
 
@@ -28,6 +44,9 @@ namespace IS413Project1.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Appointments");
+
+            migrationBuilder.DropTable(
+                name: "TimeSlots");
         }
     }
 }

@@ -1147,31 +1147,30 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.EntityFrameworkCore >= 3.1.13",
+      "Microsoft.EntityFrameworkCore.Analyzers >= 3.1.13",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.13",
       "Microsoft.EntityFrameworkCore.Sqlite >= 3.1.13"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Shun Yabutani\\.nuget\\packages\\": {}
+    "/Users/parkergunnell/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Shun Yabutani\\Source\\Repos\\413proj1\\IS413Project1\\IS413Project1.csproj",
+      "projectUniqueName": "/Users/parkergunnell/413proj1/IS413Project1/IS413Project1.csproj",
       "projectName": "IS413Project1",
-      "projectPath": "C:\\Users\\Shun Yabutani\\Source\\Repos\\413proj1\\IS413Project1\\IS413Project1.csproj",
-      "packagesPath": "C:\\Users\\Shun Yabutani\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Shun Yabutani\\Source\\Repos\\413proj1\\IS413Project1\\obj\\",
+      "projectPath": "/Users/parkergunnell/413proj1/IS413Project1/IS413Project1.csproj",
+      "packagesPath": "/Users/parkergunnell/.nuget/packages/",
+      "outputPath": "/Users/parkergunnell/413proj1/IS413Project1/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Shun Yabutani\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/parkergunnell/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1191,6 +1190,10 @@
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[3.1.13, )"
+          },
+          "Microsoft.EntityFrameworkCore.Analyzers": {
             "target": "Package",
             "version": "[3.1.13, )"
           },
@@ -1223,7 +1226,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.201/RuntimeIdentifierGraph.json"
       }
     }
   }

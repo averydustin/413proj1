@@ -3,10 +3,20 @@
 *@
 @{
 }
-@model Appointment
+@model TimeSlotViewModel
 
-<form method="post">
-    <select asp-for="ApptTime">
+<form asp-action="TimeInput" method="post">
+    <select id="TimeSlotID" name="TimeSlotID">
+        @foreach (TimeSlot x in Model.TimeSlots)
+        {
+            <option value="@x.TimeSlotID">@x.Day @x.Time</option>
+            
+        }
+
+    </select>
+    <br />
+
+    @*<select asp-for="Time">
         <option value="8am">8 a.m.</option>
         <option value="9am">9 a.m.</option>
         <option value="10am">10 a.m.</option>
@@ -20,7 +30,7 @@
         <option value="1pm">6 p.m.</option>
         <option value="1pm">7 p.m.</option>
         <option value="1pm">8 p.m.</option>
-    </select>
+    </select>*@
 
     <button type="submit" class="btn btn-sm btn-outline-success">Proceed with this time</button>
 </form>

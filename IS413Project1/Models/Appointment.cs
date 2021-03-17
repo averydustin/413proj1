@@ -8,8 +8,6 @@ namespace IS413Project1.Models
         [Key]
         public int ApptID { get; set; }
 
-        public int TimeSlotID { get; set; }
-
         [Required]
         public string ApptTime { get; set; }
 

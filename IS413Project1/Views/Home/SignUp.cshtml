@@ -3,18 +3,19 @@
 *@
 @{
     ViewBag.Title = "Sign Up Form";
-    ViewBag.Time = "Your appointment time is " + Model.ApptTime;
 }
 
-@model IS413Project1.Models.Appointment
+@model Appointment
 
 
 <h1>@ViewBag.Title</h1>
 <br />
-<p>@ViewBag.Time</p>
+<p>@ViewBag.DayTime</p>
 <br />
-<form asp-action="Index" method="post" class="m-2">
+<form asp-action="SignUp" method="post" class="m-2">
     <div asp-validation-summary="All"></div>
+    <input hidden asp-for="ApptTime" value="@ViewBag.DayTime" />
+    <input hidden name="TimeSlotID" value="@ViewBag.TimeSlotID" />
     <div class="form-group">
         <label asp-for="GroupName">Name of Group</label>
         <input asp-for="GroupName" class="form-control" />

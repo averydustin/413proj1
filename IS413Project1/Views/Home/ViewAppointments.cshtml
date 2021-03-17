@@ -4,7 +4,7 @@
 @{
 }
 
-@model IEnumerable<IS413Project1.Models.Appointment>
+@model TimeSlotViewModel
 
 <table class="table table-bordered table-striped">
     <thead>
@@ -14,11 +14,10 @@
             <th>Group Size</th>
             <th>Email</th>
             <th>Phone</th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var x in Model)
+        @foreach (Appointment x in Model.Appointments)
         {
             <tr>
                 <td class="text-left">@x.ApptTime</td>
