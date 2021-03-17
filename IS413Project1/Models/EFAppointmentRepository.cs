@@ -10,6 +10,9 @@ namespace IS413Project1.Models
         {
             _context = context;
         }
+
         public IQueryable<Appointment> Appointments => _context.Appointments;
+
+        public IQueryable<TimeSlot> TimeSlots => _context.TimeSlots;
     }
 }
