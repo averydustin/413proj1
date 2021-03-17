@@ -38,7 +38,9 @@ namespace IS413Project1.Controllers
         {
             if (ModelState.IsValid)
             {
-                return View("Index");
+                string confirmation = "Your appointment was scheduled!";
+                ViewBag.Confirm = confirmation;
+                return View("Index", confirmation);
             }
             else
             {
@@ -58,12 +60,20 @@ namespace IS413Project1.Controllers
         public IActionResult TimeInput(Appointment appointment)
         {
             string time = appointment.ApptTime;
-            return View("SignUp", time);
+            if (ModelState.IsValid)
+            {
+                return View("SignUp", time);
+            }
+            else
+            {
+                return View();
+            }
+            
         }
 
         //Page for viewing all appointments
         [HttpGet]
-        public IActionResult ViewApppointments()
+        public IActionResult ViewAppointments()
         {
             return View();
         }
