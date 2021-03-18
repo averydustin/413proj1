@@ -12,15 +12,11 @@ namespace IS413Project1.Controllers
 {
     public class HomeController : Controller
     {
-        //private readonly ILogger<HomeController> _logger;
-
-        private IAppointmentRepository _repository;
 
         private AppointmentDBContext context { get; set; }
 
-        public HomeController(IAppointmentRepository repository, AppointmentDBContext cxt)
+        public HomeController(AppointmentDBContext cxt)
         {
-            _repository = repository;
             context = cxt;
         }
         //Index View (Home page)
@@ -28,7 +24,6 @@ namespace IS413Project1.Controllers
         {
             return View();
         }
-
 
         //Sign Up View on GET (when page is originally loaded)
         [HttpGet]
@@ -65,8 +60,6 @@ namespace IS413Project1.Controllers
         [HttpGet]
         public IActionResult TimeInput()
         {
-            //var query = context.Appointments.Select(p => p.ApptTime).ToArray();
-            //var TimeSlots = context.TimeSlots.Select(p => p.;
             return View(new TimeSlotViewModel
             {
                 TimeSlots = context.TimeSlots.Where(t => t.ApptID == null)
@@ -81,11 +74,7 @@ namespace IS413Project1.Controllers
            
             if (ModelState.IsValid)
             {
-                //IQueryable<TimeSlot> timeslot = context.TimeSlots.Where(p => p.Day == Day && p.Time == Time);
-
-                
                 return RedirectToAction("SignUp",new { TimeSlotID = TimeSlotID });
-                
             }
             else
             {
