@@ -1,28 +1,32 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<h1>@ViewBag.Confirm</h1>
-<h1>Layton Utah Temple Tour</h1>
+<body style="text-align:center">
+    <h1 class="text-danger">@ViewBag.Confirm</h1>
+    <h1>Layton Utah Temple Tour</h1>
 
 
 
-<img src="~/Layton.jpg" />
-<p class="text-body">
-    PLEASE SIGN-UP FOR SUNDAY TOURS ONLY.  WE WILL SOON HAVE A NEW SCHEDULE SINCE WE HAVE BEEN ASKED TO STOP ALL OUTSIDE TOURS. Please review the available slots ON SUNDAY ONLY and click on the button to sign up. Use the "quantity" field to let us know how many people will be in your group. Thank you!
+    <img src="~/Layton.jpg" />
+    <p class="text-body" style="text-align:center">
+        PLEASE SIGN-UP FOR SUNDAY TOURS ONLY.  WE WILL SOON HAVE A NEW SCHEDULE SINCE WE HAVE BEEN ASKED TO STOP ALL OUTSIDE TOURS. Please review the available slots ON SUNDAY ONLY and click on the button to sign up. Use the "quantity" field to let us know how many people will be in your group. Thank you!
 
-    General Tour Instructions:
-    <ul>
-        <li> Masks are required.</li>
-        <li>Park on Rosewood (west side of the temple) and meet at the Visitors Center trailer.</li>
-        <li>Dress casual, except on Sunday</li>
-    </ul>
-    Available Tours:
+        General Tour Instructions:
+        <br />
+        <div class="text-info">
+            Masks are required.<br />
+            Park on Rosewood (west side of the temple) and meet at the Visitors Center trailer.<br />
+            Dress casual, except on Sunday<br />
+        </div>
+        <br />
+        Available Tours:
 
-    Tour (Outdoor): We have been asked to discontinue outside tours at this time.
-    Trailer Tour: All tours will be inside the trailer. Masks are required
-</p>
+        Tour (Outdoor): We have been asked to discontinue outside tours at this time.
+        Trailer Tour: All tours will be inside the trailer. Masks are required
+    </p>
 
-<h4>Sign up for a time below:</h4>
-<div class="btn btn-sm btn-outline-successbtn btn-sm btn-outline-success">
-    <a asp-action="TimeInput">Sign Up For Time</a>
-</div>
+    <h4>Sign up for a time below:</h4>
+
+    <a class="btn btn-sm btn-outline-successbtn btn-sm btn-outline-success" asp-action="TimeInput">Sign Up For Time</a>
+
+</body>
