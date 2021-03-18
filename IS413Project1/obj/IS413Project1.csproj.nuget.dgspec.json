@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/parkergunnell/413proj1/IS413Project1/IS413Project1.csproj": {}
+    "C:\\Users\\Shun Yabutani\\Source\\Repos\\413proj1\\IS413Project1\\IS413Project1.csproj": {}
   },
   "projects": {
-    "/Users/parkergunnell/413proj1/IS413Project1/IS413Project1.csproj": {
+    "C:\\Users\\Shun Yabutani\\Source\\Repos\\413proj1\\IS413Project1\\IS413Project1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/parkergunnell/413proj1/IS413Project1/IS413Project1.csproj",
+        "projectUniqueName": "C:\\Users\\Shun Yabutani\\Source\\Repos\\413proj1\\IS413Project1\\IS413Project1.csproj",
         "projectName": "IS413Project1",
-        "projectPath": "/Users/parkergunnell/413proj1/IS413Project1/IS413Project1.csproj",
-        "packagesPath": "/Users/parkergunnell/.nuget/packages/",
-        "outputPath": "/Users/parkergunnell/413proj1/IS413Project1/obj/",
+        "projectPath": "C:\\Users\\Shun Yabutani\\Source\\Repos\\413proj1\\IS413Project1\\IS413Project1.csproj",
+        "packagesPath": "C:\\Users\\Shun Yabutani\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Shun Yabutani\\Source\\Repos\\413proj1\\IS413Project1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/parkergunnell/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Shun Yabutani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -75,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     }

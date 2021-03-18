@@ -10,8 +10,9 @@
 
 <h1>@ViewBag.Title</h1>
 <br />
-<p>@ViewBag.DayTime</p>
+<p class="bg-primary text-white">Appointment time: @ViewBag.DayTime</p>
 <br />
+<h3>Please fill out the form to make an appointment.</h3>
 <form asp-action="SignUp" method="post" class="m-2">
     <div asp-validation-summary="All"></div>
     <input hidden asp-for="ApptTime" value="@ViewBag.DayTime" />

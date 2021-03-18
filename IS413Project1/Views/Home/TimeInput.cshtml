@@ -2,8 +2,13 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+
+    ViewBag.Title = "Time and Date";
 }
 @model TimeSlotViewModel
+
+<h1>@ViewBag.Title</h1>
+<h4>Please choose tour day and time: </h4>
 
 <form asp-action="TimeInput" method="post">
     <select id="TimeSlotID" name="TimeSlotID">
@@ -31,6 +36,7 @@
         <option value="1pm">7 p.m.</option>
         <option value="1pm">8 p.m.</option>
     </select>*@
+    <br />
 
     <button type="submit" class="btn btn-sm btn-outline-success">Proceed with this time</button>
 </form>
